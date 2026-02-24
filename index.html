@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - My Personal Site</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ヘッダー/ナビ -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-brand">Portfolio</div>
+      <button class="nav-toggle" aria-label="メニューを開く">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#posts">投稿</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="card">
+          <p>
+            はじめまして。Web開発とクラウド技術に興味を持つエンジニアです。
+            フロントエンドからバックエンドまで幅広い領域に関心があり、
+            日々新しい技術のキャッチアップに努めています。
+            チーム開発ではコミュニケーションを大切にし、
+            ユーザー視点でのプロダクト改善を心がけています。
+            このサイトでは、これまでの経歴やポートフォリオをご紹介します。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>HTML / CSS / JavaScript</h3>
+            <p>レスポンシブなWebサイトの構築経験があります。</p>
+          </div>
+          <div class="skill-card">
+            <h3>Python</h3>
+            <p>データ分析やスクリプト自動化に活用しています。</p>
+          </div>
+          <div class="skill-card">
+            <h3>GitHub</h3>
+            <p>Git/GitHubを使ったチーム開発のワークフローに慣れています。</p>
+          </div>
+          <div class="skill-card">
+            <h3>Cloud (AWS / GCP)</h3>
+            <p>クラウドインフラの構築・運用の基礎知識があります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="card timeline-item">
+            <span class="period">2024年4月 〜 現在</span>
+            <h3>株式会社サンプルテック — Webエンジニア</h3>
+            <p>自社サービスのフロントエンド開発を担当。React/TypeScriptを用いたSPA開発や、CI/CDパイプラインの整備に従事。</p>
+          </div>
+          <div class="card timeline-item">
+            <span class="period">2022年4月 〜 2024年3月</span>
+            <h3>株式会社テストラボ — ジュニアエンジニア</h3>
+            <p>受託開発チームに所属し、Python/Djangoを使った業務システムの設計・実装を担当。API設計やデータベース設計の基礎を習得。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="card portfolio-card">
+            <h3>タスク管理アプリ</h3>
+            <p>React + Firebaseで作成したタスク管理Webアプリ。リアルタイム同期機能付き。</p>
+            <a href="#" class="btn">GitHub</a>
+          </div>
+          <div class="card portfolio-card">
+            <h3>天気予報ダッシュボード</h3>
+            <p>外部APIを利用した天気情報の可視化ダッシュボード。Chart.jsでグラフ表示。</p>
+            <a href="#" class="btn">GitHub</a>
+          </div>
+          <div class="card portfolio-card">
+            <h3>個人ブログサイト</h3>
+            <p>静的サイトジェネレーターを利用した技術ブログ。Markdownで記事を管理。</p>
+            <a href="#" class="btn">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 投稿画面 -->
+    <section id="posts" class="section">
+      <div class="container">
+        <h2 class="section-title">投稿</h2>
+
+        <div class="card post-form-card">
+          <h3>新規投稿</h3>
+          <form id="post-form">
+            <div class="form-group">
+              <label for="post-title">タイトル <span class="required">*必須</span></label>
+              <input type="text" id="post-title" maxlength="80" placeholder="タイトルを入力（最大80文字）" required>
+              <span class="char-count"><span id="title-count">0</span> / 80</span>
+            </div>
+            <div class="form-group">
+              <label for="post-category">カテゴリ</label>
+              <input type="text" id="post-category" maxlength="30" placeholder="カテゴリを入力（最大30文字）">
+              <span class="char-count"><span id="category-count">0</span> / 30</span>
+            </div>
+            <div class="form-group">
+              <label for="post-body">本文 <span class="required">*必須</span></label>
+              <textarea id="post-body" maxlength="400" rows="5" placeholder="本文を入力（最大400文字）" required></textarea>
+              <span class="char-count"><span id="body-count">0</span> / 400</span>
+            </div>
+            <button type="submit" class="btn btn-primary">投稿する</button>
+          </form>
+        </div>
+
+        <div class="post-list-section">
+          <h3>投稿一覧</h3>
+          <div id="post-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="card contact-card">
+          <p><strong>Email:</strong> <a href="mailto:example@example.com">example@example.com</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/" target="_blank" rel="noopener noreferrer">https://github.com/username</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
